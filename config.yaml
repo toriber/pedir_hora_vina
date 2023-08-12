@@ -1,0 +1,10 @@
+cuenta_origen:
+  correo: sucorreo@sudominio.cl
+  contrasena: aquivasucontrasena
+cuentas_destino:
+  correos:
+  - cuenta1_destino@sudominio.cl
+  - cuenta2_destino@sudominio.cl
+mensaje: 
+  cuerpo: Hola que tal este es el mensaje que enviaras cuando se consiga la hora!
+  asunto: AAA HAY HORA 
