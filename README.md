@@ -21,6 +21,7 @@ cuentas_destino:
 mensaje: 
   cuerpo: Hola que tal este es el mensaje que enviaras cuando se consiga la hora!
   asunto: AAA HAY HORA 
+rut: 193335559
 ```
 ## Instalación
 1. Instala las dependencias necesarias ejecutando el siguiente comando
