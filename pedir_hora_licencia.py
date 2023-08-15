@@ -17,13 +17,14 @@ def send_email(subject, body, sender, recipients, password):
         smtp_server.login(sender, password)
         smtp_server.sendmail(sender, recipients, msg.as_string())
     print("Message sent!")
-def main(correo_origen: str,contrasena: str,destino: list,mensaje: dict):
+def main(correo_origen: str,contrasena: str,destino: list,mensaje: dict,rut: str):
     """
     correo_origen : Str con el correo de origen
     contrasena: Str con la contraseña del correo origen
     destino: Lista de correos destinatarios
     mensaje: Dict con dos llaves, "cuerpo": Str con el cuerpo del correo 
                                 , "asunto": Str con el asunto del correo
+    rut: Str con los números del rut a renovar hora.
     """
     start_time=time.time()
     F_hora=False
@@ -42,7 +43,7 @@ def main(correo_origen: str,contrasena: str,destino: list,mensaje: dict):
         dropdown=driver.find_element(By.ID, "tipoTramite")
         select = Select(dropdown)
         select.select_by_value("002") # Renovación
-        rut_box.send_keys("196895639")
+        rut_box.send_keys(rut)
         boton=driver.find_element(By.ID, "lnkIngresar")
         boton.click()
         try:
@@ -73,6 +74,6 @@ if __name__ =='__main__':
     contrasena=contenido["cuenta_origen"]["contrasena"]
     cuentas_destino=contenido["cuentas_destino"]["correos"]
     mensaje=contenido["mensaje"]
-
-    main(correo_origen,contrasena,cuentas_destino,mensaje)
+    rut=str(contenido["rut"])
+    main(correo_origen,contrasena,cuentas_destino,mensaje,rut)
     
